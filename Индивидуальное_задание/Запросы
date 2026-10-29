@@ -1,0 +1,23 @@
+SELECT scu, name FROM item;
+SELECT * FROM supplier WHERE email LIKE '%@techsupply.ru';
+SELECT i.name, s.quantity FROM stockposition s JOIN item i ON s.item_id = i.id WHERE s.quantity > 20 ORDER BY s.quantity DESC LIMIT 5;
+SELECT i.sku, i.name, i.unit, c.name FROM item i JOIN category c ON i.category_id = c.id;
+SELECT s.fio, i.name, sm.date FROM stockmovement sm JOIN item i ON sm.item_id = i.id JOIN supplier s ON sm.supplier_id = s.id;
+SELECT i.name, s.quantity FROM stockposition s JOIN item i ON s.item_id = i.id JOIN warehouse w ON s.warehouse_id = w.id WHERE w.name = "Главный скл
+ад";
+SELECT w.name, SUM(s.quantity) FROM stockposition s JOIN warehouse w ON s.warehouse_id = w.id GROUP BY w.name;
+SELECT i.name, sm.operation, COUNT(*) FROM stockmovement sm JOIN item i ON sm.item_id = i.id GROUP BY i.name, sm.operation;
+SELECT AVG(quantity) FROM stockposition;
+sqlite> SELECT c.name, COUNT(i.id) FROM category c LEFT JOIN item i ON c.id = 
+i.category_id;
+"Электроника",10
+SELECT s.fio, COUNT(sm.id) AS total_deliveries
+FROM supplier s
+JOIN stockmovement sm ON s.id = sm.supplier_id
+GROUP BY s.fio
+HAVING COUNT(sm.id) > 2;
+SELECT i.name, SUM(sp.quantity) AS total_quantity
+FROM item i
+JOIN stockposition sp ON i.id = sp.item_id
+GROUP BY i.name
+HAVING SUM(sp.quantity) < 20;

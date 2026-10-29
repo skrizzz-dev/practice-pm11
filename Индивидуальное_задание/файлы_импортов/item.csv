@@ -1,0 +1,11 @@
+id,sku,name,unit,category_id
+1,SKU-EL-001,Ноутбук Lenovo IdeaPad,шт,1
+2,SKU-EL-002,Смартфон Samsung Galaxy,шт,1
+3,SKU-PR-001,Клавиатура Logitech K120,шт,2
+4,SKU-PR-002,Мышь проводная Defender,шт,2
+5,SKU-CM-001,Процессор Intel Core i5,шт,3
+6,SKU-CM-002,Оперативная память Kingston 16GB,шт,3
+7,SKU-AC-001,Чехол для смартфона,шт,5
+8,SKU-AU-001,Наушники Sony WH-1000XM4,шт,8
+9,SKU-NW-001,Роутер TP-Link Archer,шт,6
+10,SKU-CN-001,Бумага для принтера А4,уп,7
